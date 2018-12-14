@@ -3,8 +3,6 @@ package main
 import (
 	"aoc2018/utils"
 	"fmt"
-	"log"
-	"strconv"
 )
 
 func main() {
@@ -17,10 +15,7 @@ func stringsToInts(strings []string) []int {
 	var arr []int
 
 	for _, s := range strings {
-		n, err := strconv.Atoi(s)
-		if err != nil {
-			log.Fatal(err)
-		}
+		n := utils.ParseInt(s)
 		arr = append(arr, n)
 	}
 

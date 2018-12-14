@@ -6,7 +6,6 @@ import (
 	"log"
 	"regexp"
 	"sort"
-	"strconv"
 	"time"
 )
 
@@ -73,10 +72,7 @@ func convertInputToEvents(input []string) []*event {
 
 		var ev event
 		if match[3] != "" {
-			guardID, err := strconv.Atoi(match[3])
-			if err != nil {
-				log.Fatal(err)
-			}
+			guardID := utils.ParseInt(match[3])
 			ev = event{eventTime, startShift, guardID}
 		} else if match[2] == "wakes up" {
 			ev = event{eventTime, wakeUp, -1}

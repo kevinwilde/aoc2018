@@ -3,9 +3,7 @@ package main
 import (
 	"aoc2018/utils"
 	"fmt"
-	"log"
 	"regexp"
-	"strconv"
 	"strings"
 )
 
@@ -67,10 +65,7 @@ func convertInputToClaims(input []string) map[int]*claim {
 		var splitNumericClaim []int
 		for _, s := range splitClaim {
 			if len(s) > 0 {
-				n, err := strconv.Atoi(s)
-				if err != nil {
-					log.Fatal(err)
-				}
+				n := utils.ParseInt(s)
 				splitNumericClaim = append(splitNumericClaim, n)
 			}
 		}

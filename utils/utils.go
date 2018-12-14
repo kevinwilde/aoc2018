@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strconv"
 )
 
 // GetInput get each line from file as string array
@@ -26,4 +27,13 @@ func GetInput(filename string) []string {
 	}
 
 	return arr
+}
+
+// ParseInt takes a string, returns int
+func ParseInt(s string) int {
+	n, err := strconv.Atoi(s)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return n
 }
