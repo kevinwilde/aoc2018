@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc2018/day7/priorityqueue"
+	"aoc2018/day07/priorityqueue"
 	"aoc2018/utils"
 	"fmt"
 	"log"
